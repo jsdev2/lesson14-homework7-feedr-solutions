@@ -41,6 +41,12 @@ var sources = [
   }
 ];
 
+// These three handler functions all standardize the responses
+// by making the `articles` variable into an array of objects that 
+// all have the same six properties: description, score, link,
+// tag, title, and thumbnail. That way the rest of the code
+// can be passed article objects, and know what to do with them.
+
 function handleRedditResponse(response) {
   // Grab the array from the rest of the data, then
   // grab only the "data" property from each object
@@ -277,8 +283,3 @@ setLogoDefaultFeedListener();
 
 // And... get the default feed:
 fetchFromSource(sources[0]);
-
-
-
-
-
